@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cities",
-    "slug": "cities",
+    "name": "app-cities",
+    "slug": "app-cities",
     "platforms": [
       "ios",
       "android",
