@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, View, FlatList } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
-import ListItem from './listItem';
+import ListItem from './components/list-item';
 
 export default function ListCity() {
 
