@@ -7,12 +7,12 @@ import ListItem from './listItem';
 export default function ListCity() {
 
   const cidades = [
-    {id: '1', cidade: 'Maurilandia', uf:'GO'},
-    {id: '2', cidade: 'Santa Helena', uf:'GO'},
-    {id: '3', cidade: 'rio Verde', uf:'GO'},
-    {id: '4', cidade: 'São Paulo', uf:'SP'},
-    {id: '5', cidade: 'Rio de Janeiro', uf:'RJ'},
-    {id: '5', cidade: 'Guaraí', uf:'TO'},
+    {id: '1', cidade: 'Maurilandia', pais:'Brasil'},
+    {id: '2', cidade: 'Santa Helena', pais:'Brasil'},
+    {id: '3', cidade: 'rio Verde', pais:'Brasil'},
+    {id: '4', cidade: 'São Paulo', pais:'Brasil'},
+    {id: '5', cidade: 'Toronto', pais:'Canada'},
+    {id: '5', cidade: 'Londres', pais:'Inglaterra'},
 
   ];
     return (
@@ -28,7 +28,7 @@ export default function ListCity() {
             renderItem={ ({item}) => ( 
             <ListItem 
               nomeCidade={item}
-              estado={item}
+              nomePais={item}
               /> 
             )}
             ItemSeparatorComponent={ () => <Separator/>}
