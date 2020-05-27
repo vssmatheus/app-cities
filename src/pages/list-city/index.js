@@ -37,6 +37,6 @@ export default function ListCity() {
       </View>
     );
 }
-/* linha separadora */
+/* linha separator */
 const Separator = () => <View style={{flex:1, height: 1, width:'97%', backgroundColor: '#ddd', alignSelf:"center"}}></View>
 
