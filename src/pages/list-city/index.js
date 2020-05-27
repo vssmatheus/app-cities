@@ -12,7 +12,7 @@ export default function ListCity() {
     {id: '3', cidade: 'rio Verde', pais:'Brasil'},
     {id: '4', cidade: 'São Paulo', pais:'Brasil'},
     {id: '5', cidade: 'Toronto', pais:'Canada'},
-    {id: '5', cidade: 'Londres', pais:'Inglaterra'},
+    {id: '6', cidade: 'Londres', pais:'Inglaterra'},
 
   ];
     return (
