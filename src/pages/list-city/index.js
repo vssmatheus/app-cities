@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, View, FlatList } from 'react-native';
+import { Image, View, FlatList } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import ListItem from './listItem';
@@ -37,6 +37,6 @@ export default function ListCity() {
       </View>
     );
 }
-
+/* linha separadora */
 const Separator = () => <View style={{flex:1, height: 1, width:'97%', backgroundColor: '#ddd', alignSelf:"center"}}></View>
 
