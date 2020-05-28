@@ -11,13 +11,12 @@ export default function ListCity() {
   const [isLoading, setLoading] = useState(true);
 
   async function listarCidade(){
-    
     /* api json esta na pasta api cidades.json */
-    const load = await fetch('https://192.168.1000.5:3000/cidades', {
-      body: JSON.stringify({
-        nomeCidade: this.cidades.nomeCidade,
-        nomePais: this.cidades.nomePais,      
-      }),
+    fetch('http://192.168.100.5:3000/cidades', {
+     /*  body: JSON.stringify({
+        nomeCidade: cidades.nomeCidade,
+        nomePais: cidades.nomePais   
+      }), */
       method: "GET",
       headers: {
         'Accept': 'application/json',
