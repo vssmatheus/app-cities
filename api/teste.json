@@ -1,0 +1,34 @@
+{
+    "cidades": [
+      {
+        "nomeCidade": "Rio de Janeiro",
+        "nomePais": "Brasil",
+        "id": "fd2"
+      },
+      {
+        "nomeCidade": "Toronto",
+        "nomePais": "Canada",
+        "id": "po5"
+      },
+      {
+        "nomeCidade": "Del Toro",
+        "nomePais": "Mexico",
+        "id": "jv9"
+      },
+      {
+        "nomeCidade": "Nova York",
+        "nomePais": "EUA",
+        "id": "fr5"
+      },
+      {
+        "nomeCidade": "Toscana",
+        "nomePais": "Itália",
+        "id": "so8"
+      },
+      {
+        "nomeCidade": "Santa Helena",
+        "nomePais": "Brasil",
+        "id": "dp6"
+      }
+    ]
+  }

@@ -1,0 +1,118 @@
+{
+    "cidades": [
+      {
+        "nomeCidade": "Rio de Janeiro",
+        "nomePais": "Brasil",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "000"
+      },
+      {
+        "nomeCidade": "Toronto",
+        "nomePais": "Canada",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "001"
+      },
+      {
+        "nomeCidade": "Del Toro",
+        "nomePais": "Mexico",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "002"
+      },
+      {
+        "nomeCidade": "Nova York",
+        "nomePais": "EUA",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "003"
+      },
+      {
+        "nomeCidade": "Toscana",
+        "nomePais": "Itália",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "004"
+      },
+      {
+        "nomeCidade": "Santa Helena",
+        "nomePais": "Brasil",
+        "localidades": [
+            {
+                "nome": "Lago das rosas",
+                "tipo": "Ponto turístico",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "5.4"
+              },
+              {
+                "nome": "Posto Ipiranga",
+                "tipo": "Posto de combustível",
+                "endereço": "centro, Av. Antonio R, Nº. 12",
+                "notas": "4.2"
+              } 
+        ],
+        "id": "005"
+      }
+    ]
+  }
