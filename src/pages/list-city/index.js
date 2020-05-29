@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Text, Image, View, FlatList, ActivityIndicator } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
-import ListItem from './components/list-item';
 import api from '../../services/api';
+import {useNavigation} from '@react-navigation/native';
+import Profile from '../list-profile';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function ListCity() {
 
   const [cities, setCities] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const navigation = useNavigation();
+
+  function NavigateToProfile(city) {
+      navigation.navigate('Places', { city });
+  }
 
   async function listarCidade(){
     const response = await api.get('/cities');
@@ -32,15 +40,16 @@ export default function ListCity() {
             data={cities}
             keyExtractor={city => String(city.id)}
             renderItem={ ({item: city}) => ( 
-            <ListItem 
-              nomeCidade={city}
-              nomePais={city}
-              /> 
+              <View style={styles.citiesList}>
+                <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
+                    <Text style={styles.nomeCidade}>{city.nameCity} - {city.nameCountry} </Text>
+                    <AntDesign name="right" size={15} color="gray" style={{alignSelf:'flex-end'}}/>
+                </TouchableOpacity>            
+              </View> 
             )}
             ItemSeparatorComponent={ () => <Separator/>}
           />
-          )}
-          
+          )}          
         </View>
       </View>
     );

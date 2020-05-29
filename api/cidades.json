@@ -1,115 +1,115 @@
 {
-    "cidades": [
+    "cities": [
       {
-        "nomeCidade": "Rio de Janeiro",
-        "nomePais": "Brasil",
-        "localidades": [
+        "nameCity": "Rio de Janeiro",
+        "nameCountry": "Brasil",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "000"
       },
       {
-        "nomeCidade": "Toronto",
-        "nomePais": "Canada",
-        "localidades": [
+        "nameCity": "Toronto",
+        "nameCountry": "Canada",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "001"
       },
       {
-        "nomeCidade": "Del Toro",
-        "nomePais": "Mexico",
-        "localidades": [
+        "nameCity": "Del Toro",
+        "nameCountry": "Mexico",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "002"
       },
       {
-        "nomeCidade": "Nova York",
-        "nomePais": "EUA",
-        "localidades": [
+        "nameCity": "Nova York",
+        "nameCountry": "EUA",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "003"
       },
       {
-        "nomeCidade": "Toscana",
-        "nomePais": "Itália",
-        "localidades": [
+        "nameCity": "Toscana",
+        "nameCountry": "Itália",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "004"
       },
       {
-        "nomeCidade": "Santa Helena",
-        "nomePais": "Brasil",
-        "localidades": [
+        "nameCity": "Santa Helena",
+        "nameCountry": "Brasil",
+        "places": [
             {
-                "nome": "Lago das rosas",
-                "tipo": "Ponto turístico",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "5.4"
+                "name": "Lago das rosas",
+                "type": "Ponto turístico",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "5.4"
               },
               {
-                "nome": "Posto Ipiranga",
-                "tipo": "Posto de combustível",
-                "endereço": "centro, Av. Antonio R, Nº. 12",
-                "notas": "4.2"
+                "name": "Posto Ipiranga",
+                "type": "Posto de combustível",
+                "adress": "centro, Av. Antonio R, Nº. 12",
+                "notes": "4.2"
               } 
         ],
         "id": "005"

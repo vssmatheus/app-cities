@@ -16,18 +16,4 @@ export default StyleSheet.create({
         shadowColor:'#000',
         paddingTop: Constants.statusBarHeight + 5,
     },
-    citiesList:{
-        padding: 15,
-        backgroundColor: '#fff',
-        borderRadius:5
-    },
-    itemList:{
-        flexDirection: 'row',
-        justifyContent: "space-between",
-        flex: 1
-    },
-    nomeCidade:{
-        fontSize: 15,
-        color: 'gray'
-    },
 });
