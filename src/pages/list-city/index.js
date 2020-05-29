@@ -7,26 +7,13 @@ import api from '../../services/api';
 
 export default function ListCity() {
 
-  const [cidades, setCidades] = useState([]);
+  const [cities, setCities] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   async function listarCidade(){
-    /* api json esta na pasta api cidades.json */
-    fetch('http://192.168.100.5:3000/cidades', {
-     /*  body: JSON.stringify({
-        nomeCidade: cidades.nomeCidade,
-        nomePais: cidades.nomePais   
-      }), */
-      method: "GET",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((response) => response.json())
-    .then((json) => setCidades(json.cidades))
-    .catch((error) => console.error(error))
-    .finally(() => setLoading(false));
+    const response = await api.get('/cities');
+    setCities(response.data);
+    setLoading(false);
   } 
 
   useEffect(() => {
@@ -39,31 +26,22 @@ export default function ListCity() {
             <Image style={{alignSelf: "center"}} source={logoImg}/>
         </View>
 
-        <View style={{ flex: 1, padding: 24 }}>
-      {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
-        <FlatList
-          data={cidades}
-          keyExtractor={cidade => String(cidade.id)}
-          showsVerticalScrollIndicator={false}
-          renderItem={({ item: cidade }) => (
-            <Text>{cidade.nomeCidade} - {cidade.nomePais}</Text>
-          )}
-        />
-      )}
-    </View>
-        {/* <View style={styles.lista}>
-          <FlatList
-            data={cidades}
-            keyExtractor={item => item.id}
-            renderItem={ ({item}) => ( 
+        <View style={styles.lista}>
+          {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
+            <FlatList
+            data={cities}
+            keyExtractor={city => String(city.id)}
+            renderItem={ ({item: city}) => ( 
             <ListItem 
-              nomeCidade={item}
-              nomePais={item}
+              nomeCidade={city}
+              nomePais={city}
               /> 
             )}
             ItemSeparatorComponent={ () => <Separator/>}
           />
-        </View> */}
+          )}
+          
+        </View>
       </View>
     );
 }
