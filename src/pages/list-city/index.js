@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, Image, View, FlatList, ActivityIndicator } from 'react-native';
+import { Text, Image, View, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import api from '../../services/api';
@@ -35,21 +35,24 @@ export default function ListCity() {
         </View>
 
         <View style={styles.lista}>
-          {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
-            <FlatList
-            data={cities}
-            keyExtractor={city => String(city.id)}
-            renderItem={ ({item: city}) => ( 
-              <View style={styles.citiesList}>
-                <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
-                    <Text style={styles.nomeCidade}>{city.nameCity} - {city.nameCountry} </Text>
-                    <AntDesign name="right" size={15} color="gray" style={{alignSelf:'flex-end'}}/>
-                </TouchableOpacity>            
-              </View> 
-            )}
-            ItemSeparatorComponent={ () => <Separator/>}
-          />
-          )}          
+            {/* <SafeAreaView> */}
+                {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
+                <FlatList
+                data={cities}
+                keyExtractor={city => String(city.id)}
+                showsVerticalScrollIndicator={true}
+                renderItem={ ({item: city}) => (                 
+                  <View style={styles.citiesList}>
+                    <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
+                        <Text style={styles.nomeCidade}>{city.nameCity} - {city.nameCountry} </Text>
+                        <AntDesign name="right" size={15} color="gray" style={{alignSelf:'flex-end'}}/>
+                    </TouchableOpacity>            
+                  </View> 
+                )}
+                ItemSeparatorComponent={ () => <Separator/>}
+              />
+              )}
+            {/* </SafeAreaView>  */}       
         </View>
       </View>
     );

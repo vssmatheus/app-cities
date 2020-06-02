@@ -26,7 +26,7 @@ export default function Profile() {
           <Image style={{alignSelf: "center"}} source={logoImg}/>
       </View>
       <View style={styles.locality}>
-        <Text>{city.nameCity}</Text>        
+        <Text>{city.nameCity}</Text>      
       </View>
     </View>
     );
