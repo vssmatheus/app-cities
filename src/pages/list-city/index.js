@@ -9,6 +9,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { Alert } from 'react-native';
+import axios from 'axios';
 
 export default function ListCity() {
 
@@ -32,13 +33,22 @@ export default function ListCity() {
     );
   }
 
-  async function DeletarCidade(city){
+  function DeleteCity(){  
+    const id = cities.id;
+    const url = `http://192.168.100.5:3333/cities/`;
+    axios.delete(url + id)
+  }    
+
+  function DeletarCidade(){
    Alert.alert(
      'Excluir',
      'Tem certeza que deseja excluir esta cidade ?',
      [
        {text: 'Não', onPress: () => {}, style: 'cancel'},
-       {text: 'Sim', onPress: () =>{}}
+       {text: 'Sim', onPress: () =>{
+          DeleteCity();         
+          listarCidade();
+       }}
      ],
      {cancelable: true}
    );
