@@ -32,11 +32,21 @@ export default function AddCity() {
         
         <View style={styles.formulario}>
             <View>
-                <TextInput style={styles.entrada} placeholder="Cidade"/>
+                <TextInput
+                    style={styles.entrada} 
+                    placeholder="Cidade"
+                    onChangeText={nameCity => setCity({nameCity})}
+                    defaultValue={city.nameCity}                    
+                />
             </View>
             
             <View>
-                <TextInput style={styles.entrada} placeholder="País"/>
+                <TextInput 
+                    style={styles.entrada} 
+                    placeholder="País"
+                    onChangeText={nameCountry => setCountry({nameCountry})}
+                    defaultValue={country.nameCountry}                    
+                />
             </View>
             <View>
                 <TouchableOpacity style={styles.botao} onPress={EnviarDados}>
