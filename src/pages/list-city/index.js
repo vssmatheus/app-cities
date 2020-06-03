@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, Image, View, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
+import { Text, Image, View, FlatList, ActivityIndicator, SafeAreaView, RefreshControl } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import api from '../../services/api';
@@ -19,9 +19,10 @@ export default function ListCity() {
   }
 
   async function listarCidade(){
-    const response = await api.get('/cities');
+    const response = await api.get('/cities')
+    .finally(()=>setLoading({isLoading:false}));
     setCities(response.data);
-    setLoading(false);
+    setLoading(false);  
   } 
 
   useEffect(() => {
@@ -35,12 +36,14 @@ export default function ListCity() {
         </View>
 
         <View style={styles.lista}>
-            {/* <SafeAreaView> */}
+            <SafeAreaView>
                 {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
                 <FlatList
                 data={cities}
                 keyExtractor={city => String(city.id)}
                 showsVerticalScrollIndicator={true}
+                refreshing={isLoading}
+                onRefresh={listarCidade}
                 renderItem={ ({item: city}) => (                 
                   <View style={styles.citiesList}>
                     <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
@@ -52,7 +55,7 @@ export default function ListCity() {
                 ItemSeparatorComponent={ () => <Separator/>}
               />
               )}
-            {/* </SafeAreaView>  */}       
+            </SafeAreaView>        
         </View>
       </View>
     );

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity  } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AddCity() {
 
     const [city, setCity] = useState({nameCity:''});
     const [country, setCountry] = useState({nameCountry:''});
+    const navigation = useNavigation();
 
     async function EnviarDados(){
         fetch('http://192.168.100.5:3333/cities', {
@@ -21,7 +23,7 @@ export default function AddCity() {
             nameCountry: country.nameCountry
         })
         });
-        
+        navigation.navigate('Cities');     
     }
     
     return (
