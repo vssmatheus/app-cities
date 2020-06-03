@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Text, Image, View, FlatList, ActivityIndicator, SafeAreaView, RefreshControl } from 'react-native';
+import { Text, Image, View, FlatList, ActivityIndicator, SafeAreaView, Animated, RefreshControl } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import api from '../../services/api';
 import {useNavigation} from '@react-navigation/native';
 import Profile from '../list-profile';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons, Ionicons} from '@expo/vector-icons';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { Alert } from 'react-native';
 
 export default function ListCity() {
 
@@ -16,6 +18,30 @@ export default function ListCity() {
 
   function NavigateToProfile(city) {
       navigation.navigate('Places', { city });
+  }
+
+  function LeftActions(progress, dragX){
+    return(
+      <View >
+        <TouchableOpacity onPress={DeletarCidade}>
+          <Animated.View>
+            <AntDesign name="close" size={20} color="#F86464" style={{marginRight:25}}/>
+          </Animated.View>
+        </TouchableOpacity>        
+      </View>
+    );
+  }
+
+  async function DeletarCidade(city){
+   Alert.alert(
+     'Excluir',
+     'Tem certeza que deseja excluir esta cidade ?',
+     [
+       {text: 'Não', onPress: () => {}, style: 'cancel'},
+       {text: 'Sim', onPress: () =>{}}
+     ],
+     {cancelable: true}
+   );
   }
 
   async function listarCidade(){
@@ -36,25 +62,27 @@ export default function ListCity() {
         </View>
 
         <View style={styles.lista}>
-            <SafeAreaView>
+            <SafeAreaView> 
                 {isLoading ? <ActivityIndicator size="large" color="#ffff00"/> : (
-                <FlatList
-                data={cities}
-                keyExtractor={city => String(city.id)}
-                showsVerticalScrollIndicator={true}
-                refreshing={isLoading}
-                onRefresh={listarCidade}
-                renderItem={ ({item: city}) => (                 
-                  <View style={styles.citiesList}>
-                    <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
-                        <Text style={styles.nomeCidade}>{city.nameCity} - {city.nameCountry} </Text>
-                        <AntDesign name="right" size={15} color="gray" style={{alignSelf:'flex-end'}}/>
-                    </TouchableOpacity>            
-                  </View> 
-                )}
-                ItemSeparatorComponent={ () => <Separator/>}
-              />
-              )}
+                  <FlatList
+                  data={cities}
+                  keyExtractor={city => String(city.id)}
+                  showsVerticalScrollIndicator={true}
+                  refreshing={isLoading}
+                  onRefresh={listarCidade}
+                  renderItem={ ({item: city}) => (                 
+                    <View style={styles.citiesList}>
+                      <Swipeable renderLeftActions={LeftActions}>
+                        <TouchableOpacity style={styles.itemList} onPress={() => NavigateToProfile(city)}>
+                            <Text style={styles.nomeCidade}>{city.nameCity} - {city.nameCountry} </Text>
+                            <AntDesign name="right" size={15} color="gray" style={{alignSelf:'flex-end'}}/>
+                        </TouchableOpacity>
+                      </Swipeable>           
+                    </View> 
+                  )}
+                  ItemSeparatorComponent={ () => <Separator/>}
+                />
+                )}              
             </SafeAreaView>        
         </View>
       </View>

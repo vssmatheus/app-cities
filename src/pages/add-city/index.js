@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity  } from 'react-native';
+import { Text, View, Image, TextInput, Button, TouchableOpacity, ActivityIndicator, Alert  } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
@@ -8,22 +8,43 @@ export default function AddCity() {
 
     const [city, setCity] = useState({nameCity:''});
     const [country, setCountry] = useState({nameCountry:''});
+    const [isLoading, setLoading] = useState(false);
     const navigation = useNavigation();
 
     async function EnviarDados(){
-        fetch('http://192.168.100.5:3333/cities', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            nameCity: city.nameCity,
-            nameCountry: country.nameCountry
-        })
-        });
-        navigation.navigate('Cities');     
+        if (city.nameCity.trim() === "" || country.nameCountry.trim() === "") {
+            Alert.alert('Erro','Todos os campos devem ser preenchidos');
+          } else {
+            Alert.alert(
+                'Nova Cidade',
+                `Tem certeza que deseja Adicionar a cidade de ${city.nameCity} no país ${country.nameCountry}?`,
+                [
+                  {text: 'Não', onPress: () => {}, style: 'cancel'},
+                  {text: 'Sim', onPress: () =>{
+                    setLoading(true);
+                    fetch('http://192.168.100.5:3333/cities', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    },            
+                    body: JSON.stringify({
+                        nameCity: city.nameCity,
+                        nameCountry: country.nameCountry
+                    })
+                    });
+                    setLoading(false);
+                    setCity({text:''});
+                    setCountry({text:''});
+                    
+                    Alert.alert('Cidade Adicionada',`${city.nameCity} em ${country.nameCountry} adicionado com sucesso!`);
+                    navigation.navigate('Cities');                    
+                  }}
+                ],
+                {cancelable: true}
+              );            
+          }             
     }
     
     return (
@@ -52,8 +73,11 @@ export default function AddCity() {
             </View>
             <View>
                 <TouchableOpacity style={styles.botao} onPress={EnviarDados}>
-                    <Text style={{color: '#7159c1'}}>Adicionar</Text>
+                    {isLoading ? <ActivityIndicator/>: (
+                        <Text style={{color: '#7159c1'}}>Adicionar</Text>
+                    )}
                 </TouchableOpacity>
+                
             </View>
         </View>
     </View>
