@@ -14,6 +14,7 @@ export default StyleSheet.create({
     },
     lista:{
         shadowColor:'#000',
+        paddingVertical: 50,
         paddingTop: Constants.statusBarHeight + 5,
     },
     citiesList:{
